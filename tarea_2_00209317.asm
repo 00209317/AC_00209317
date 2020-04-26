@@ -2,7 +2,6 @@
 	org 100h
 
 
-	mov	ax, 2d
 	add	ax, 0d
 	add	ax, 9d
 	add	ax, 3d
@@ -14,7 +13,6 @@
 	cmp 	ax, 4d
 	je  	lalupe
 
-	int 	20h
 
 lalupe: mov     cl, "M"
         mov     [200h], cl
@@ -44,20 +42,19 @@ lalupe: mov     cl, "M"
 ;-------EJERCICIO 2
 
 
-section .text
-	mov ax, 4h
-	mov cx, 0h
-	mov bx, 0h
-	mov dx, 0d
-	mov cx, 000bh
-	mov bx,2h
+;section .text
+;	mov cx, 0h
+;	mov bx, 0h
+;	mov dx, 0d
+;	mov cx, 000bh
+;	mov bx,2h
 
 
-lupi:	mov [di+210h],ax
-		mul bx
-		inc di
-		loop lupi
-section .data
+;lupi:	mov [di+210h],ax
+;		mul bx
+;		inc di
+;		loop lupi
+;section .data
 
 ;-------EJERCICIO 3
         org 100h
