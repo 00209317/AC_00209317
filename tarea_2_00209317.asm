@@ -40,45 +40,43 @@ lalupe: mov     cl, "M"
 
 
 ;-------EJERCICIO 2
+        mov ax, 2d
+        mov cx, 2d
+        
+xd:  
+        mul cx
+        mov [si+210h], ax
+        inc si ; 
+        cmp ax, 256d 
+        jb xd
 
-
-;section .text
-;	mov cx, 0h
-;	mov bx, 0h
-;	mov dx, 0d
-;	mov cx, 000bh
-;	mov bx,2h
-
-
-;lupi:	mov [di+210h],ax
-;		mul bx
-;		inc di
-;		loop lupi
-;section .data
+equisde:  
+        mul cx
+        inc si
+        mov [si+210h], ax
+        inc si
+        cmp si, 14d 
+        jb equisde
 
 ;-------EJERCICIO 3
-        org 100h
+	mov	bx, 0d
+	mov	dx, 1d
+        mov	cx, 13d
 
-	    mov	ax, 1d 
+        mov     di, 0d
 
-	    mov	bx, 0d
-	    mov	dx, 1d
-	    mov	cx, 13d
-
-        mov di, 0d
-
-        mov [di+220h], bx
-        inc di
-        mov [di+220h], dx
-        inc di
+        mov     [di+220h], bx
+        inc     di
+        mov     [di+220h], dx
+        inc     di
 
 holi:	mov	ax, bx
-	    add	ax, dx
-        mov [di+220h], ax
-        inc di
-	    mov	bx, dx
-	    mov	dx, ax
+	add	ax, dx
+        mov     [di+220h], ax
+        inc     di
+	mov	bx, dx
+	mov	dx, ax
 
-	    Loop holi
+	Loop holi
 
-	    int	20h
+	int	20h
