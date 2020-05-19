@@ -75,7 +75,7 @@ lupi2:	mov 	cl, [msg2+di-29d]
 		ret
 
 phrase3:mov 	di, 12d
-lupi3:	mov 	cl, [msg3+di-12d]
+lupi3:	mov 	cl, [msg3+di-15d]
 		call    m_cursr3
 		call 	w_char
 		inc		di
