@@ -84,9 +84,9 @@ lupi3:	mov 	cl, [msg3+di-12d]
 		ret
 
 section .data
-msg	    db 	"Mami que tu quiere? "
+msg	    db 	"Van dos soldados en una moto... "
 len 	equ	$-msg+9d
-msg2	db 	"Probanding"
+msg2	db 	"y no se cae ninguno porque van soldados"
 len2 	equ	$-msg2+29d
-msg3	db 	"no se"
+msg3	db 	"jajaja xD que mal chiste la dvd "
 len3 	equ	$-msg3+12d
