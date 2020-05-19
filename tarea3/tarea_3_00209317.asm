@@ -5,12 +5,13 @@ section 	.text
 		call 	texto	
 		call 	cursor
 		call 	phrase
+		call    phrase2
 		call	kbwait
 
 		int 	20h
 
 texto:	mov 	ah, 00h
-		mov	al, 03h
+		mov		al, 03h
 		int 	10h
 		ret
 
@@ -40,6 +41,13 @@ m_cursr:mov 	ah, 02h
 		int 	10h
 		ret
 
+m_cursr2:mov 	ah, 02h
+		mov 	dx, di  ; columna
+		mov 	dh, 12d ; fila
+		mov 	bh, 0h
+		int 	10h
+		ret
+
 phrase:	mov 	di, 9d
 lupi:	mov 	cl, [msg+di-9d]
 		call    m_cursr
@@ -49,17 +57,17 @@ lupi:	mov 	cl, [msg+di-9d]
 		jb		lupi
 		ret
 
-;phrase2:mov 	di, 29d
-;lupi2:	mov 	cl, [msg+di-29d]
-;		call    m_cursr
-;		call 	w_char
-;		inc		di
-;		cmp 	di, len
-;		jb		lupi2
-;		ret
+phrase2:mov 	di, 29d
+lupi2:	mov 	cl, [msg2+di-29d]
+		call    m_cursr2
+		call 	w_char
+		inc		di
+		cmp 	di, len2
+		jb		lupi2
+		ret
 
 section .data
 msg	    db 	"Mami que tu quiere? "
 len 	equ	$-msg+9d
-msg	    db 	"Mami que tu quiere? "
-len 	equ	$-msg+29d
+msg2	db 	"Probanding"
+len2 	equ	$-msg2+29d
