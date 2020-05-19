@@ -74,7 +74,7 @@ lupi2:	mov 	cl, [msg2+di-29d]
 		jb		lupi2
 		ret
 
-phrase3:mov 	di, 12d
+phrase3:mov 	di, 15d
 lupi3:	mov 	cl, [msg3+di-15d]
 		call    m_cursr3
 		call 	w_char
@@ -89,4 +89,4 @@ len 	equ	$-msg+9d
 msg2	db 	"y no se cae ninguno porque van soldados"
 len2 	equ	$-msg2+29d
 msg3	db 	"jajaja xD que mal chiste la dvd "
-len3 	equ	$-msg3+12d
+len3 	equ	$-msg3+15d
