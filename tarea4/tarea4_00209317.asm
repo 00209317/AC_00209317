@@ -10,7 +10,7 @@ section .text
 lupi:	call 	kb
         mov     cl, 30h
         sub     al, cl
-        mov	    [300h+si], al
+        mov	[200h+si], al
         inc 	si
         cmp 	si, 5h
         je	show
@@ -93,16 +93,16 @@ word10:mov    dx, msg10
         int     20h
 
 
-calificacion:   mov     al, [300h]
-        add     al, [301h]
-        add     al, [302h]
-        add     al, [303h]
-        add     al, [304h]
+calificacion:mov     al, [200h]
+        add     al, [201h]
+        add     al, [202h]
+        add     al, [203h]
+        add     al, [204h]
         mov     cl, 5h
-        mov     [310h], al
-        mov     [311h], cl
+        mov     [210h], al
+        mov     [211h], cl
         div     cl
-        mov     [312h], al
+        mov     [212h], al
         ret
 
 w_strng:mov	ah, 09h
