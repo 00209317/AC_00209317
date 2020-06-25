@@ -41,6 +41,24 @@ lupi_4:	mov 	cx, 125d ; Columna
 	cmp 	di, 75d
 	jne 	lupi_4
 
+	xor 	di, di   ; mov di, 0h
+lupi_5:	mov 	cx, 200d ; Columna 
+	mov	dx, 125d ; Fila
+	add 	dx, di
+	call 	pixel
+	inc 	di
+	cmp 	di, 25d
+	jne 	lupi_5
+
+	xor 	di, di   ; mov di, 0h
+lupi6:	mov 	cx, 125d ; Columna 
+	add	cx, di	 ; Offset
+	mov	dx, 125d ; Fila
+	call 	pixel
+	inc 	di
+	cmp 	di, 75d
+	jne 	lupi6
+
 
 	call 	kb	 ; Utilizamos espera de alguna tecla
 
